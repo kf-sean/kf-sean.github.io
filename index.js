@@ -9,6 +9,7 @@ function set_switch(dev_id, port, sw, cb) {
     url: `${API_HOST}/${API_VER}/controller/switch/${dev_id}`,
     method: "POST",
     contentType: "application/x-www-form-urlencoded",
+    //headers: {Authorization: "Baerer {nTqOrlSptF156qc26duTSQhmuWFVA2RCeLCRRaenTb2}"},
     dataType: "json",
     data: req_data
   }).done(resp_data => {
