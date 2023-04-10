@@ -1,8 +1,59 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>ABCD</title>
+    <title>KiaoFarming API examples</title>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <table>
+      <tr>
+        <td rowspan="2">QrkNV</td>
+        <td>Port 1</td>
+        <td>
+          <label>
+            <input type="radio" name="QrkNV_switch_port1" id="QrkNV_switch_port1_off" value="off">
+            關閉
+          </label>
+          <label>
+            <input type="radio" name="QrkNV_switch_port1" id="QrkNV_switch_port1_on" value="on">
+            開啟
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>Port 2</td>
+        <td>
+          <label>
+            <input type="radio" name="QrkNV_switch_port2" id="QrkNV_switch_port2_off" value="off">
+            關閉
+          </label>
+          <label>
+            <input type="radio" name="QrkNV_switch_port2" id="QrkNV_switch_port2_on" value="on">
+            開啟
+          </label>
+        </td>
+      </tr>
+    </table>
+    <div>
+      <label>
+        Device ID
+        <input type="text" id="dev_id" maxlength="10" size="10px"/>
+      </label>
+      <label>
+        Port
+        <input type="number" id="port" min="1" max="8" value="1"/>
+      </label>
+      <label>
+        <input type="radio" name="dev_switch" id="dev_switch_off" value="off">
+        關閉
+      </label>
+      <label>
+        <input type="radio" name="dev_switch" id="dev_switch_on" value="on">
+        開啟
+      </label>
+    </div>
+    <div id="resp_msg"></div>
   </body>
 </html>
