@@ -1,4 +1,4 @@
-const API_HOST = "http://mqtt.kiaofarming.com";
+const API_HOST = "https://mqtt.kiaofarming.com";
 const API_VER = "v1";
 
 function set_switch(dev_id, port, sw, cb) {
@@ -9,7 +9,7 @@ function set_switch(dev_id, port, sw, cb) {
     url: `${API_HOST}/${API_VER}/controller/switch/${dev_id}`,
     method: "POST",
     contentType: "application/x-www-form-urlencoded",
-    //headers: {Authorization: "Baerer {nTqOrlSptF156qc26duTSQhmuWFVA2RCeLCRRaenTb2}"},
+    //headers: { Authorization: "Baerer {nTqOrlSptF156qc26duTSQhmuWFVA2RCeLCRRaenTb2}" },
     dataType: "json",
     data: req_data
   }).done(resp_data => {
@@ -28,11 +28,11 @@ window.onload = () => {
 
   let input_resp_msg = $("#resp_msg");
 
-  QrkNV_switch_port1.on("change", () => {
-    set_switch(QrkNV_id, 1, QrkNV_switch_port1.val(), console.log);
+  QrkNV_switch_port1.on("change", function () {
+    set_switch(QrkNV_id, 1, $(this).val(), console.log);
   });
 
-  QrkNV_switch_port2.on("change", () =>{
+  QrkNV_switch_port2.on("change", function () {
     set_switch(QrkNV_id, 2, QrkNV_switch_port2.val(), console.log);
   });
 
@@ -60,7 +60,7 @@ window.onload = () => {
     }
   }
 
-  dev_switch.on("change", () => {
+  dev_switch.on("change", function () {
     if (input_dev_id.val() === "") {
       input_resp_msg.html("Device ID不得為空白");
       return;
