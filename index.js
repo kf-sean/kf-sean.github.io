@@ -33,7 +33,7 @@ window.onload = () => {
   });
 
   QrkNV_switch_port2.on("change", function () {
-    set_switch(QrkNV_id, 2, QrkNV_switch_port2.val(), console.log);
+    set_switch(QrkNV_id, 2, $(this).val(), console.log);
   });
 
   function process_switch_response(resp) {
@@ -68,6 +68,6 @@ window.onload = () => {
 
     dev_switch.attr("disabled", "disabled");
     input_resp_msg.html("等待API回應結果");
-    set_switch(input_dev_id.val(), input_port.val(), dev_switch.val(), process_switch_response);
+    set_switch(input_dev_id.val(), input_port.val(), $(this).val(), process_switch_response);
   });
 };
