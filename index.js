@@ -177,7 +177,11 @@ window.onload = () => {
   */
 
   /* Only init & online event included
-       online: boolean (true: online, false: offline)
+      online: boolean (true: online, false: offline)
+  */
+
+  /* Only new & updated event included
+      unsave: true (present for the data isn't stored at DB)
   */
 
   evt_src.addEventListener("init", (ev) => { // Return all device data array
